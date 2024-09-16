@@ -32,7 +32,8 @@ class PropertyFormRequest extends FormRequest
             'city' => 'required|min:0',
             'address' => 'required|min:0',
             'postal_code' => 'required|min:5',
-            'sold' => 'required|boolean'
+            'sold' => 'required|boolean',
+            'options' => 'array|exists:options,id|required'
         ];
     }
 }

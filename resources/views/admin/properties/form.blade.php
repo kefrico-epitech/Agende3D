@@ -78,10 +78,17 @@
             ])
         </div>
         @include('shared.checkbox', [
-            'class' => 'my-4',
+            'class' => 'col my-4',
             'label' => 'Disponible',
             'name' => 'sold',
             'value' => $property->sold,
+        ])
+        @include('shared.select', [
+            'class' => 'col my-4',
+            'name' => 'options',
+            'value' => $property->options()->pluck('id'),
+            'options' => $options,
+            'isMultiple' => true,
         ])
         <div class="d-flex gap-4">
             <button class="btn btn-primary">
